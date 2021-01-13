@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import "tailwindcss/tailwind.css";
+import Hero from '../component/hero/Hero';
+
 export default function Home() {
   return (
    <>
@@ -7,8 +9,7 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
     </Head>
-    <h1 className="text-sm">Hello World</h1>
-
+    <Hero/>
    </>
   )
 }
