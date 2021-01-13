@@ -28,4 +28,59 @@
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
       
     }
+    &--primary{
+        background-color: #407BFF;
+        color: #fff;
+
+        &::after {
+            background-color:#407BFF;
+        }
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+
+     
+    }
+    
+    &--animated {
+        animation : moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+
+.btn-text{
+    &:link,
+    &:visited{
+        font-size: 1rem;
+        color : var(--color-primary);
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid var(--color-primary) ;
+        padding: 3px;
+       
+
+    }
+    &:hover{
+        background-color: var(--color-primary);
+        color:var(--color-white);
+        box-shadow: 0 1rem 2rem rgba(var(--color-black),.15);
+        transform: translateY(-2px);
+        
+
+    }
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba(var(--color-black),.15);
+        transform: translateY(0);
+
+    }
 }
