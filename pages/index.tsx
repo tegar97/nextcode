@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import "tailwindcss/tailwind.css";
 import Hero from '../component/hero/Hero';
+import SectionCategory from '../component/section-category/SectionCategory';
 
 export default function Home() {
   return (
@@ -10,6 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
     </Head>
     <Hero/>
+    
+
    </>
   )
 }
