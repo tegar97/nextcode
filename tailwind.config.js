@@ -2,7 +2,7 @@ module.exports = {
   purge: ['./**/*.tsx'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-
+    
     fontFamily: {
       screens: {
         'tablet': '640px',

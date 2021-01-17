@@ -9,14 +9,14 @@ export default function Home() {
     }, []);
     const switchTheme = () => {
         if (isMounted) {
-        setTheme(theme === "light" ? "dark" : "light");
+          setTheme(theme === "light" ? "dark" : "light");
         }
     };
 return (
     <div className="text-center">
       <Head>
         <title>
-          Dark mode with Tailwind and Next.js
+          Dark mode with Tailwind and {theme}
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
