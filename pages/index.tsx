@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import "tailwindcss/tailwind.css";
 import Artikel from '../component/Artikel/Artikel';
 import DarkMode from '../component/dark-mode/Dark-Mode';
 import Hero from '../component/hero/Hero';
@@ -14,6 +13,7 @@ export default function Home() {
     </Head>
     <Hero/>
     <Artikel/>
+
     <DarkMode/>
     
     

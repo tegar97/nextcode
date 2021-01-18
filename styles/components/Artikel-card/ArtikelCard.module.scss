@@ -1,14 +1,36 @@
 .artikelCard{
-    border-radius: 50px;
+    border-radius: 5px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: start;
     align-items: flex-start;
     box-shadow: 10px 4px 8px 5px rgba(0,0,0,0.17)
     ;
+    transition: .5s all;
+    cursor: pointer;
+    &:hover{
+        transform: translateY(-2px);
+    }
 
 }
 
 .artikelImage{
     width: 100%;
+}
+.category{
+    font-size: .8rem;
+    margin-bottom: .5rem;
+    padding: .2rem;
+    border-radius:5px ;
+    text-align: center;
+    transition: .4s all;
+    &:not(:first-child) {
+        margin-left: 1rem;
+
+    }
+    &:hover{
+        transform: translateY(-8px);
+    }
+    cursor: pointer;
+
 }
