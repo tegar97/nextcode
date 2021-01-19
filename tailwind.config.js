@@ -6,10 +6,19 @@ module.exports = {
       colors: {
         black: {
           50: '#141920',
+          100: '#ccc',
           default: '#000'
         },
+    
         blue:{
           500: '#407BFF'
+        },
+        gray: {
+          darkest: '#1f2d3d',
+          dark: '#ccc',
+          DEFAULT: '#c0ccda',
+          light: '#e0e6ed',
+          lightest: '#f9fafc',
         }
       }
     },

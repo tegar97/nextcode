@@ -18,7 +18,7 @@ function Hero() {
             <div className={styles.header }>
                 <h1 className="text-4xl font-bold text-white sm:text-4xl lg:text-6xl md:text-4xl ">BELAJAR SEPUTAR IT </h1>
                 <h2 className="w-11/12 mt-8 font-medium leading-7 tracking-wide text-white">Nextcode indonesia  hadir sebagai wadah para developer muda indonesia yang ingin belajar coding seperti pemograman web,machine learning,pemogramana web GRATIS. </h2>
-                <button className="mt-8 text-black-50 btn btn--white">Get Started</button>
+                <button className="mt-8 text-black-50 btn btn--white" style={{color: '#141920' }}>Get Started</button>
             </div>
             {
                 dekstopUp &&

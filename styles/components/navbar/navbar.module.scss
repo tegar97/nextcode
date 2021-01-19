@@ -1,10 +1,23 @@
 .navbar{
     width: 100%;
+    position: fixed;
+    position: -webkit-sticky; /* Safari */
+
+    height: 80px;
     padding: 1.5rem 3rem ;
-    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    top: 0;
     color: #fff;
+    transition: .5s all;
+ 
 }
+.active{
+    background-color: #fff;
+    color: #000;
+ 
+
+}
+
