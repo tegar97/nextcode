@@ -13,8 +13,7 @@ function Post() {
                 <div className="text-center">
                   <h1 className="text-4xl dark:color-grey-600 ">Java Dasar - Tipe Data Number</h1>
                   <div className="flex justify-center mt-4">
-                    <span>By Tania Rascia on November 30, 2020
-</span>
+                    <span>By Tania Rascia on November 30, 2020</span>
                    
 
                   </div>
@@ -31,7 +30,15 @@ Integer, yaitu tipe data number bilangan bulat
 Floating Point, yaitu tipe data number bilangan desimal
 Tipe Data Integer
 Untuk tipe data Integer pun, masih banyak jenisnya. Tiap jenis tipe data Integer memiliki batas minimal dan maksimal yang bisa ditampung yang berbeda-beda. Selain itu ukurannya pun berbeda-beda.
+Final Variable
+Saat membuat variable di Java, secara default variable bisa diubah lagi. Namun kadang kita ingin membuat sebuah variable, yang tidak ingin diubah lagi. Atau ada yang bilang bahwa ini adalah konstan.
+
+Untuk melakukan hal ini, di Java kita bisa menambahkan kata kunci final sebelum pembuatan variable nya. Semua variable yang bersifat final, tidak akan bisa dirubah lagi nilainya setelah pertama kali di tambahkan data. Jika kita coba ubah, maka akan otomatis error.
                 </p>
+               <div className="mt-5">
+                   <span className="text-lg">TAG</span>
+                   <span className="block mt-5 text-md"><Link href="/tag">Reactjs</Link></span>
+               </div>
             </div>
         </div>
     )
