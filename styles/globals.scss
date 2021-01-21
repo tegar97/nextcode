@@ -147,3 +147,6 @@ body{
   ::-webkit-scrollbar-thumb:hover {
     background: var(--color-primary);
   }
+
+  .slick-list {margin: 0 -5px;}
+  .slick-slide>div {padding: 0 5px;}

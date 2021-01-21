@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-
+import moment from 'moment-timezone'
 import styles from './../../styles/components/Artikel-card/ArtikelCard.module.scss'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
-function ArtikelCard() {
+function ArtikelCard({post}) {
     const { theme, setTheme } = useTheme();
     return (
         <div className={`bg-white dark:primary text-left ${styles.artikelCard}`} style={{backgroundColor: theme  === 'light' ? '#fff' : '#141920'}}>
@@ -15,16 +15,20 @@ function ArtikelCard() {
             </Link>
             <div className="p-5">
                 <div className="flex flex-row">
-                    <small className={`dark:text-white text-white ${styles.category}`} style={{backgroundColor: 'crimson'}}>React js</small>
-                    <small className={`dark:text-white text-white ${styles.category}`} style={{backgroundColor: 'blue'}}>Redux</small>
+                    {
+                        post.tags.map(tag => (
+                            <small className={`dark:text-white text-white ${styles.category}`} style={{backgroundColor: `${tag.accent_color}`}}>{tag.name}</small>
+
+                        ))
+                    }
 
                 </div>
                 <Link href="/post/214">
                     <div>
-                        <h2 className="text-lg">Tutorial Java 21</h2>
+                        <h2 className="text-lg">{post.title}</h2>
                         <div className="flex flex-row mt-10">
-                            <p  className="text-sm">11 menit lalu</p>
-                            <li className="ml-2 text-sm">5 menit baca</li>
+                            <p  className="text-sm">{moment.tz(post.created_at,"Asia/Jakarta").fromNow()}</p>
+                            <li className="ml-2 text-sm">{post.reading_time + ' menit baca'}</li>
                         </div>
 
                     </div>
