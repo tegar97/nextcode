@@ -1,12 +1,10 @@
 import { useTheme } from 'next-themes';
 import React,{useRef,useEffect,useState} from 'react'
 import styles from './../../styles/components/navbar/navbar.module.scss'
-import gsap from 'gsap'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
 import Image from 'next/image'
 import DarkMode from './../dark-mode/Dark-Mode';
-import Sidebar from "react-sidebar";
 import NavbarModal from './NavbarModal';
 
 function NavbarMobile() {

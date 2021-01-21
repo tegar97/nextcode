@@ -1,8 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
+import styles from './../../styles/components/category-slider/category-slider.module.scss'
+import useSWR from 'swr'
+import { useRouter } from 'next/router'
 
-export default class CategorySlider extends Component {
-  render() {
+
+
+function fetcher(url) {
+  return fetch(url, {
+   headers: {
+    'Content-Type': 'application/json',
+   },
+  }).then(response => response.json());
+ }
+function useCategory (url) {
+  const { data, error } = useSWR(url,fetcher)
+  return {
+    data,
+    isLoading: !error && !data,
+    isError: error
+  }
+}
+ function CategorySlider  ({setTag}) {
+  const router = useRouter()
+  const { data , isError  ,isLoading} = useCategory('http://blog-backend.tegar.me/ghost/api/v3/content/tags/?key=adf6d2df02536197acba4f4ef2')
+
     var settings = {
       dots: true,
       infinite: false,
@@ -41,22 +63,28 @@ export default class CategorySlider extends Component {
       ]
     };
     return (
-      <div className="p-5 " style={{height: '10rem'}}>
+      <div className="p-5 " >
         <Slider  {...settings}>
-          <div className="cursor-pointer hover:translate-y-0.5	 content-center justify-center p-2 mr-5 text-center bg-white shadow-xl flexflex-row dark:bg-black-50" style={{borderRadius: '10px',}}>
-            <h3>REACT JS</h3>
-          </div>
-          <div className="content-center justify-center p-2 mr-5 text-center bg-white flexflex-row dark:bg-black-50" style={{borderRadius: '10px'}}>
-            <h3>Laravel</h3>
-          </div>
-          <div className="content-center justify-center p-2 text-center bg-white flexflex-row dark:bg-black-50" style={{borderRadius: '10px'}}>
-            <h3>Tailwind</h3>
-          </div>
+         {
+           isLoading ? 'loading' :
+           data.tags.map(tag => (
+            <div className={`${styles.categorySlider} border-solid border-black-50 border-2	 bg-white dark:bg-black-50`} style={{borderRadius: '10px',}}>
+              <button onClick={() => setTag(tag.slug)} >{tag.name}</button>
+            </div>
+
+           ))
+
+         }
+
+            
+        
          
      
          
         </Slider>
       </div>
     );
-  }
+  
 }
+
+export default CategorySlider

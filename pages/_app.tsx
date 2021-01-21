@@ -1,11 +1,10 @@
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import "tailwindcss/tailwind.css";
 import '../styles/globals.scss'
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { ThemeProvider } from "next-themes";
 import Footer from '../component/footer/footer';
 import Navbar from '../component/navbar/navbar';
-
 import { useMediaQuery } from 'react-responsive'
 import dynamic from 'next/dynamic'
 import DarkMode from './../component/dark-mode/Dark-Mode'

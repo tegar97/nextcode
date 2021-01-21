@@ -25,6 +25,8 @@ class MyDocument extends Document {
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
             crossOrigin="anonymous"
           />
+          <link href="/prism.css" rel="stylesheet" />
+
           <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
@@ -32,6 +34,8 @@ class MyDocument extends Document {
         <body className="text-black bg-white dark:bg-gray-800 dark:text-white font-body"  >
           <Main />
           <NextScript />
+          {/* <script src="/prism.js" integrity="sha512-YBk7HhgDZvBxmtOfUdvX0z8IH2d10Hp3aEygaMNhtF8fSOvBZ16D/1bXZTJV6ndk/L/DlXxYStP8jrF77v2MIg==" crossOrigin="anonymous"/> */}
+        
         </body>
       </Html>
     )

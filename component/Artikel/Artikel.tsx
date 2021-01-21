@@ -11,7 +11,7 @@ const Artikel = ({posts}) =>{
             <div className="grid gap-10 mt-3 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ">
              {
                posts.posts.map(post => (
-                 <ArtikelCard post={post} />
+                 <ArtikelCard key={post.id} post={post}  />
                ))
              }
                   
