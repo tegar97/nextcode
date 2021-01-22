@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import ArtikelCard from '../artikel-card/Artikel-card'
 
@@ -19,7 +20,7 @@ const Artikel = ({posts}) =>{
             </div>
             
 
-            <button className="mt-5 btn btn-text">Lihat Lebih Banyak</button>
+            <Link href="/artikel"><button className="mt-5 btn btn-text">Lihat Lebih Banyak</button></Link>
         </section>
     )
 }

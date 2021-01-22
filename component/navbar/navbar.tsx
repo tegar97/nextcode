@@ -34,9 +34,9 @@ function Navbar() {
             </Link>
             <ul style={{marginRight: active ? '65%' : '',transition: '.5s all'}} className={`flex flex-row   ${!active && homeRouter ? 'text-white dark:text-white' : 'text-black-50  dark:text-white  '}`} > 
                 <Link href="/artikel"><li className="mr-3 text-sm cursor-pointer ">Artikel</li></Link>
-                <Link href="/path"><li className="mr-3 text-sm cursor-pointer ">Kategori</li></Link>
-                <Link href="/path"><li className="mr-3 text-sm cursor-pointer ">Tutorial Series</li></Link>
-                <Link href="/path"><li className="mr-3 text-sm cursor-pointer ">Tentang</li></Link>
+                <Link href="/kategori"><li className="mr-3 text-sm cursor-pointer ">Kategori</li></Link>
+                <Link href="#"><li className="mr-3 text-sm cursor-pointer ">Tutorial Series</li></Link>
+                <Link href="/#"><li className="mr-3 text-sm cursor-pointer ">Tentang</li></Link>
               
             </ul>
             <div>

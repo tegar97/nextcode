@@ -17,7 +17,7 @@ function ArtikelCard({post}) {
                 <div className="flex flex-row">
                     {
                         post.tags.map(tag => (
-                            <small className={`dark:text-white text-white ${styles.category}`} style={{backgroundColor: `${tag.accent_color}`}}>{tag.name}</small>
+                            <Link href={`kategori/${tag.name}`}><small className={`dark:text-white text-white ${styles.category}`} style={{backgroundColor: `${tag.accent_color}`}}>{tag.name}</small></Link>
 
                         ))
                     }

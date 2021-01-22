@@ -14,8 +14,8 @@ function NavbarModal() {
             <div className={styles.navigation__background}>&nbsp;</div>
             <div className={styles.navigation__nav}>
                 <ul className={styles.navigation__list}>
-                    <li className={styles.navigation__item}><a href="#" className={styles.navigation__link}>Tutorial</a></li>
-                    <li className={styles.navigation__item}><a href="#" className={styles.navigation__link}>Kategori</a></li>
+                    <li className={styles.navigation__item}><a href="/artikel" className={styles.navigation__link}>Tutorial</a></li>
+                    <li className={styles.navigation__item}><a href="/kategori" className={styles.navigation__link}>Kategori</a></li>
                     <li className={styles.navigation__item}><a href="#" className={styles.navigation__link}>Tutorial Series</a></li>
                     <li className={styles.navigation__item}><a href="#" className={styles.navigation__link}>Tentang</a></li>
                  
