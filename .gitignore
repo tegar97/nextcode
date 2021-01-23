@@ -12,7 +12,6 @@ cert.key
 /coverage
 
 # next.js
-/.next/
 /out/
 
 # production
