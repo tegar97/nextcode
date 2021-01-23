@@ -16,8 +16,8 @@ function Footer() {
                     <p className="mt-2 font-medium text-white">Belajar web development,machine learning ,mobile development dll bahasas indonesia</p>
                 </div>
                 <div className="col-span-1 text-center text-white lg:text-left" >
-                    <h4  className="pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500">INFORMASI</h4>
-                    <ul >
+                    <span  className="pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500">INFORMASI</span>
+                    <ul   className="mt-5"> 
                         <li>Tentang</li>
                         <li>FAQ</li>
                         <li>Ketentuan Layanan</li>
@@ -26,8 +26,8 @@ function Footer() {
                     </ul>
                 </div>
                 <div className="col-span-1 text-center text-white lg:text-left" >
-                    <h4  className="pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500">INFORMASI</h4>
-                    <ul >
+                    <span  className="pb-2 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500">INFORMASI</span>
+                    <ul className="mt-5" >
                         <li>Tentang</li>
                         <li>FAQ</li>
                         <li>Ketentuan Layanan</li>
@@ -36,13 +36,13 @@ function Footer() {
                     </ul>
                 </div>
                 <div className="self-center col-span-2 text-center text-white xtext-center lg:col-span-1 lg:text-left" >
-                    <h4  className="pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500">INFORMASI</h4>
-                    <p>Kritik, saran, dan tawaran kerja sama atau kolaborasi bisa dikirimkan ke alamat kontak dibawah</p>
+                    <span  className="pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500">INFORMASI</span>
+                    <p  className="mt-5">Kritik, saran, dan tawaran kerja sama atau kolaborasi bisa dikirimkan ke alamat kontak dibawah</p>
                 </div>
             </div>
             <div className="p-5 text-center text-white border-t-4 border-white border-solid">
                 <p>
-                © Nextcode.id 2021 • Hak Cipta Dilindungi
+                © Nextcode.id {new Date().getFullYear()} • Hak Cipta Dilindungi
 
                 </p>
                 <p>Dibuat dengan ♥ di Bandung</p>

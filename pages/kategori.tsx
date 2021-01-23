@@ -3,6 +3,7 @@ import styles from './../styles/components/kategori-page/category-page.module.sc
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Image from 'next/image'
+import { NextSeo } from 'next-seo';
 
 
 
@@ -10,6 +11,33 @@ function Category({tagData}) {
     
     const { theme, setTheme } = useTheme();
     return (
+        <>
+        <NextSeo 
+            title={'Kumpulan  Materi Pembelajaran Nextcode indonesia'}
+            description={'Baca materi yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini'}
+            canonical={'https://www.nextcode.id/artikel'}
+            openGraph={{
+            url: 'https://www.nextcode.id/artikel',
+            title:'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia',
+            description: 'Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini',
+            images: [
+                {
+                url: ``,
+                width: 800,
+                height: 600,
+                alt: `Kumpulan  Materi Pembelajaran Nextcode indonesia`,
+                }
+            
+            ],
+            site_name: 'Kumpulan  Materi Pembelajaran Nextcode indonesia'
+            }}
+            twitter={{
+            handle: '@tegar',
+            site: '@nextcode',
+            cardType: 'summary_large_image',
+        }}
+    
+        />
         <section className={styles.categoryPage}>
             <div className={theme === 'light' ? styles.categoryPage__hero : styles.categoryPage__heroDark}  >
                 <div className="text-center ">
@@ -36,6 +64,7 @@ function Category({tagData}) {
             </div>
          
         </section>
+        </>
     )
 }
 

@@ -561,6 +561,13 @@ module.exports = require("react/jsx-runtime");
 
 /***/ }),
 
+/***/ "J8oA":
+/***/ (function(module, exports) {
+
+module.exports = require("react-animate-on-scroll");
+
+/***/ }),
+
 /***/ "NNXn":
 /***/ (function(module, exports) {
 
@@ -1293,10 +1300,11 @@ function Footer() {
         })]
       }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
         className: "col-span-1 text-center text-white lg:text-left",
-        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
           className: "pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500",
           children: "INFORMASI"
         }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("ul", {
+          className: "mt-5",
           children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
             children: "Tentang"
           }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
@@ -1311,10 +1319,11 @@ function Footer() {
         })]
       }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
         className: "col-span-1 text-center text-white lg:text-left",
-        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
-          className: "pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+          className: "pb-2 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500",
           children: "INFORMASI"
         }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("ul", {
+          className: "mt-5",
           children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
             children: "Tentang"
           }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
@@ -1329,17 +1338,18 @@ function Footer() {
         })]
       }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
         className: "self-center col-span-2 text-center text-white xtext-center lg:col-span-1 lg:text-left",
-        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h4", {
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
           className: "pb-2 mb-4 text-xl border-solid lg:border-b-4 lg:w-1/4 dark:border-blue-500",
           children: "INFORMASI"
         }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
+          className: "mt-5",
           children: "Kritik, saran, dan tawaran kerja sama atau kolaborasi bisa dikirimkan ke alamat kontak dibawah"
         })]
       })]
     }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
       className: "p-5 text-center text-white border-t-4 border-white border-solid",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
-        children: "\xA9 Nextcode.id 2021 \u2022 Hak Cipta Dilindungi"
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("p", {
+        children: ["\xA9 Nextcode.id ", new Date().getFullYear(), " \u2022 Hak Cipta Dilindungi"]
       }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("p", {
         children: "Dibuat dengan \u2665 di Bandung"
       })]
@@ -1402,7 +1412,7 @@ function Navbar() {
       children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
         className: "flex items-center p-2 cursor-pointer",
         children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(image_default.a, {
-          src: theme === "light" || !active ? '/logo-black.png' : '/logo-white.png',
+          src: theme === "light" ? '/logo-black.png' : '/logo-white.png',
           alt: "logo",
           width: 100,
           height: 30
@@ -1440,7 +1450,8 @@ function Navbar() {
         })
       })]
     }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
+        href: "/artikel",
         children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
           className: "mr-4 fas fa-search color-black-50 dark:color-white",
           style: {
@@ -1522,6 +1533,10 @@ function Home() {
     })
   });
 }
+// EXTERNAL MODULE: external "react-animate-on-scroll"
+var external_react_animate_on_scroll_ = __webpack_require__("J8oA");
+var external_react_animate_on_scroll_default = /*#__PURE__*/__webpack_require__.n(external_react_animate_on_scroll_);
+
 // CONCATENATED MODULE: ./pages/_app.tsx
 
 
@@ -1531,6 +1546,7 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1556,7 +1572,10 @@ function MyApp({
   });
   return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(external_next_themes_["ThemeProvider"], {
     attribute: "class",
-    children: [dekstopUp ? /*#__PURE__*/Object(jsx_runtime_["jsx"])(navbar, {}) : /*#__PURE__*/Object(jsx_runtime_["jsx"])(NavbarMobile, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Component, _objectSpread({}, pageProps)), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Home, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(footer, {})]
+    children: [dekstopUp ? /*#__PURE__*/Object(jsx_runtime_["jsx"])(navbar, {}) : /*#__PURE__*/Object(jsx_runtime_["jsx"])(NavbarMobile, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Component, _objectSpread({}, pageProps)), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Home, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(external_react_animate_on_scroll_default.a, {
+      animateIn: "fadeIn",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(footer, {})
+    })]
   });
 }
 

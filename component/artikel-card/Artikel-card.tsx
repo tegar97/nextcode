@@ -7,7 +7,7 @@ import Link from 'next/link'
 function ArtikelCard({post}) {
     const { theme, setTheme } = useTheme();
     return (
-        <div className={`bg-white dark:primary text-left ${styles.artikelCard}`} style={{backgroundColor: theme  === 'light' ? '#fff' : '#141920'}}>
+        <div className={`bg-white dark:primary text-left ${styles.artikelCard} dark:bg-black-50`} >
             <Link href={`/post/${post.slug}`}>
                 <div className={styles.artikelImage}>
                     <Image src={post.feature_image} alt="Artikel "  width={500} height={380}/>

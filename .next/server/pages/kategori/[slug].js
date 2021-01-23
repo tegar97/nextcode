@@ -145,10 +145,7 @@ function ArtikelCard({
     setTheme
   } = Object(next_themes__WEBPACK_IMPORTED_MODULE_5__["useTheme"])();
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
-    className: `bg-white dark:primary text-left ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.artikelCard}`,
-    style: {
-      backgroundColor: theme === 'light' ? '#fff' : '#141920'
-    },
+    className: `bg-white dark:primary text-left ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.artikelCard} dark:bg-black-50`,
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
       href: `/post/${post.slug}`,
       children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
@@ -573,7 +570,6 @@ function Category({
   posts,
   category
 }) {
-  console.log(category);
   const {
     theme,
     setTheme

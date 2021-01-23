@@ -145,10 +145,7 @@ function ArtikelCard({
     setTheme
   } = Object(next_themes__WEBPACK_IMPORTED_MODULE_5__["useTheme"])();
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
-    className: `bg-white dark:primary text-left ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.artikelCard}`,
-    style: {
-      backgroundColor: theme === 'light' ? '#fff' : '#141920'
-    },
+    className: `bg-white dark:primary text-left ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.artikelCard} dark:bg-black-50`,
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
       href: `/post/${post.slug}`,
       children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
@@ -1736,6 +1733,13 @@ function mitt() {
 
 /***/ }),
 
+/***/ "efsx":
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
+
+/***/ }),
+
 /***/ "elyg":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3099,7 +3103,46 @@ var external_swr_default = /*#__PURE__*/__webpack_require__.n(external_swr_);
 var external_react_slick_ = __webpack_require__("O/hg");
 var external_react_slick_default = /*#__PURE__*/__webpack_require__.n(external_react_slick_);
 
+// EXTERNAL MODULE: external "react-paginate"
+var external_react_paginate_ = __webpack_require__("vhO2");
+var external_react_paginate_default = /*#__PURE__*/__webpack_require__.n(external_react_paginate_);
+
+// CONCATENATED MODULE: ./component/pagination/pagination.tsx
+
+
+
+
+function Pagination({
+  page,
+  setPage,
+  totalPages
+}) {
+  const handlePageChange = data => {
+    let pageNumber = data.selected;
+    setPage(pageNumber + 1);
+  };
+
+  return /*#__PURE__*/Object(jsx_runtime_["jsx"])(external_react_paginate_default.a, {
+    previousLabel: 'previous',
+    nextLabel: 'next',
+    breakLabel: '...',
+    breakClassName: 'break-me',
+    pageCount: totalPages,
+    marginPagesDisplayed: 2,
+    pageRangeDisplayed: 5,
+    onPageChange: handlePageChange,
+    containerClassName: 'pagination',
+    subContainerClassName: 'pages pagination',
+    activeClassName: 'active'
+  });
+}
+
+/* harmony default export */ var pagination = (Pagination);
+// EXTERNAL MODULE: external "next-seo"
+var external_next_seo_ = __webpack_require__("efsx");
+
 // CONCATENATED MODULE: ./pages/artikel.tsx
+
 
 
 
@@ -3108,6 +3151,8 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -3145,6 +3190,10 @@ function Artikel({
     0: search,
     1: setSearch
   } = Object(external_react_["useState"])('');
+  const {
+    0: page,
+    1: setPage
+  } = Object(external_react_["useState"])(1);
 
   const onSearch = e => {
     setSearch(e.target.value.toLowerCase());
@@ -3196,68 +3245,98 @@ function Artikel({
     data,
     isError,
     isLoading
-  } = usePost(`http://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&${search ? '' : 'limit=6'}&include=tags&${tag ? `filter=tag:${tag}` : ''}`);
-  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("section", {
-    className: artikel_page_module_default.a.artikelPage,
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-      className: theme === 'light' ? artikel_page_module_default.a.artikelPage__hero : artikel_page_module_default.a.artikelPage__heroDark,
-      children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-        className: "text-center ",
-        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h1", {
-          className: "text-4xl font-bold text-center text-white",
-          children: "ARTIKEL"
-        }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("h2", {
-          className: "mt-3 text-lg font-medium text-center text-white",
-          children: ["Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur ", /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
-            href: "/tutorial-series",
-            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
-              className: "cursor-pointer text-blak-50 dark:text-blue-500",
-              children: "klik disini"
-            })
+  } = usePost(`http://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&${search ? '' : 'limit=8'}&include=tags&${tag ? `filter=tag:${tag}` : ''}&page=${page}`);
+  return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(jsx_runtime_["Fragment"], {
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(external_next_seo_["NextSeo"], {
+      title: 'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia',
+      description: 'Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini',
+      canonical: 'https://www.nextcode.id/artikel',
+      openGraph: {
+        url: 'https://www.nextcode.id/artikel',
+        title: 'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia',
+        description: 'Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini',
+        images: [{
+          url: ``,
+          width: 800,
+          height: 600,
+          alt: `Kumpulan Artikel Materi Pembelajaran Nextcode indonesia`
+        }],
+        site_name: 'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia'
+      },
+      twitter: {
+        handle: '@tegar',
+        site: '@nextcode',
+        cardType: 'summary_large_image'
+      }
+    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("section", {
+      className: artikel_page_module_default.a.artikelPage,
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+        className: theme === 'light' ? artikel_page_module_default.a.artikelPage__hero : artikel_page_module_default.a.artikelPage__heroDark,
+        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+          className: "text-center ",
+          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h1", {
+            className: "text-4xl font-bold text-center text-white",
+            children: "ARTIKEL"
+          }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("h2", {
+            className: "mt-3 text-lg font-medium text-center text-white",
+            children: ["Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur ", /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
+              href: "/tutorial-series",
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("span", {
+                className: "cursor-pointer text-blak-50 dark:text-blue-500",
+                children: "klik disini"
+              })
+            })]
           })]
+        })
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
+        className: "p-5 mt-10",
+        children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h1", {
+          className: "text-4xl text-center",
+          children: "ARTIKEL"
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(search_search, {
+          onSearch: onSearch
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+          className: "p-5 ",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])(external_react_slick_default.a, _objectSpread(_objectSpread({}, settings), {}, {
+            children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+              className: `${artikel_page_module_default.a.categorySlider} border-solid border-blue-500 border-2	 bg-white dark:bg-black-50`,
+              style: {
+                borderRadius: '10px'
+              },
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+                onClick: () => setTag(''),
+                children: "Semua Kategori"
+              })
+            }), tagData.tags.map(tag => /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+              className: `${artikel_page_module_default.a.categorySlider} border-solid border-blue-500  border-2	 bg-white dark:bg-black-50`,
+              style: {
+                borderRadius: '10px'
+              },
+              children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+                onClick: () => setTag(tag.slug),
+                children: tag.name
+              })
+            }, tag.id))]
+          }))
+        }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+          className: "grid gap-10 mt-3 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ",
+          children: isLoading ? 'loading' : data.posts.filter(post => {
+            if (search == "") {
+              return post;
+            } else if (post.title.toLowerCase().includes(search.toLowerCase())) {
+              return post;
+            }
+          }).map(post => /*#__PURE__*/Object(jsx_runtime_["jsx"])(Artikel_card["a" /* default */], {
+            post: post
+          }, post.id))
+        }), isLoading ? 'wait ...' : data.meta.pagination.pages < 1 ? '' : /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
+          className: "mt-5 text-center",
+          children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(pagination, {
+            page: page,
+            setPage: setPage,
+            totalPages: data.meta.pagination.pages
+          })
         })]
-      })
-    }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
-      className: "p-5 mt-10",
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h1", {
-        className: "text-4xl text-center",
-        children: "ARTIKEL"
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(search_search, {
-        onSearch: onSearch
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: "p-5 ",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsxs"])(external_react_slick_default.a, _objectSpread(_objectSpread({}, settings), {}, {
-          children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-            className: `${artikel_page_module_default.a.categorySlider} border-solid border-black-50 border-2	 bg-white dark:bg-black-50`,
-            style: {
-              borderRadius: '10px'
-            },
-            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-              onClick: () => setTag(''),
-              children: "Semua Kategori"
-            })
-          }), tagData.tags.map(tag => /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-            className: `${artikel_page_module_default.a.categorySlider} border-solid border-black-50 border-2	 bg-white dark:bg-black-50`,
-            style: {
-              borderRadius: '10px'
-            },
-            children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-              onClick: () => setTag(tag.slug),
-              children: tag.name
-            })
-          }, tag.id))]
-        }))
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
-        className: "grid gap-10 mt-3 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 ",
-        children: isLoading ? 'loading' : data.posts.filter(post => {
-          if (search == "") {
-            return post;
-          } else if (post.title.toLowerCase().includes(search.toLowerCase())) {
-            return post;
-          }
-        }).map((post, key) => /*#__PURE__*/Object(jsx_runtime_["jsx"])(Artikel_card["a" /* default */], {
-          post: post
-        }, post.id))
       })]
     })]
   });
@@ -3554,6 +3633,13 @@ function createObserver(options) {
   });
   return instance;
 }
+
+/***/ }),
+
+/***/ "vhO2":
+/***/ (function(module, exports) {
+
+module.exports = require("react-paginate");
 
 /***/ }),
 

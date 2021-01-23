@@ -28,7 +28,7 @@ function Navbar() {
     <nav className={`${styles.navbar } ${active && homeRouter ? 'bg-white dark:bg-gray-900' : ''} ${!homeRouter ? 'bg-white dark:bg-gray-900' : ''} `} style={{top: active && !homeRouter ? '-100px' : ''}}>
             <Link href="/">
                 <div className="flex items-center p-2 cursor-pointer">
-                  <Image src={theme  === "light"  || !active ? '/logo-black.png' : '/logo-white.png'} alt="logo" width={100} height={30} />
+                  <Image src={theme  === "light"   ? '/logo-black.png' : '/logo-white.png'} alt="logo" width={100} height={30} />
 
                 </div>
             </Link>
@@ -40,7 +40,7 @@ function Navbar() {
               
             </ul>
             <div>
-                <button ><i className="mr-4 fas fa-search color-black-50 dark:color-white" style={{color: theme === 'light' ? '#000' : '#fff'}} ></i></button>
+               <Link href="/artikel"><i className="mr-4 fas fa-search color-black-50 dark:color-white" style={{color: theme === 'light' ? '#000' : '#fff'}} ></i></Link>
             </div>
     </nav>
     )

@@ -145,10 +145,7 @@ function ArtikelCard({
     setTheme
   } = Object(next_themes__WEBPACK_IMPORTED_MODULE_5__["useTheme"])();
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
-    className: `bg-white dark:primary text-left ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.artikelCard}`,
-    style: {
-      backgroundColor: theme === 'light' ? '#fff' : '#141920'
-    },
+    className: `bg-white dark:primary text-left ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.artikelCard} dark:bg-black-50`,
     children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
       href: `/post/${post.slug}`,
       children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
@@ -273,10 +270,6 @@ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__("F5FC");
 
-// EXTERNAL MODULE: external "next/head"
-var head_ = __webpack_require__("xnum");
-var head_default = /*#__PURE__*/__webpack_require__.n(head_);
-
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__("YFqc");
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
@@ -329,9 +322,6 @@ var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 // EXTERNAL MODULE: external "react-responsive"
 var external_react_responsive_ = __webpack_require__("NNXn");
 
-// EXTERNAL MODULE: external "next-themes"
-var external_next_themes_ = __webpack_require__("lN3F");
-
 // CONCATENATED MODULE: ./component/hero/Hero.tsx
 
 
@@ -340,12 +330,9 @@ var external_next_themes_ = __webpack_require__("lN3F");
 
 
 
-
-function Hero() {
-  const {
-    theme,
-    setTheme
-  } = Object(external_next_themes_["useTheme"])();
+function Hero({
+  mode
+}) {
   const dekstopUp = Object(external_react_responsive_["useMediaQuery"])({
     query: '(min-width: 992px)'
   });
@@ -353,17 +340,17 @@ function Hero() {
     query: '(max-width:900px)'
   });
   return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("section", {
-    className: theme === 'light' ? hero_module_default.a.light : hero_module_default.a.dark,
+    className: mode === 'light' ? hero_module_default.a.light : hero_module_default.a.dark,
     children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
       className: hero_module_default.a.header,
       children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h1", {
-        className: "text-4xl font-bold text-white sm:text-4xl lg:text-6xl md:text-4xl ",
+        className: `${hero_module_default.a.header__main} text-4xl font-bold text-white sm:text-4xl lg:text-6xl md:text-4xl`,
         children: "BELAJAR SEPUTAR IT "
       }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("h2", {
-        className: "w-11/12 mt-8 font-medium leading-7 tracking-wide text-white",
+        className: `${hero_module_default.a.header__secondary} w-11/12 mt-8 font-medium leading-7 tracking-wide text-white`,
         children: "Nextcode indonesia  hadir sebagai wadah para developer muda indonesia yang ingin belajar coding seperti pemograman web,machine learning,pemogramana web GRATIS. "
       }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-        className: "mt-8 text-black-50 btn btn--white",
+        className: `${hero_module_default.a.header__button}  mt-8 text-black-50 btn btn--white`,
         style: {
           color: '#141920'
         },
@@ -372,7 +359,8 @@ function Hero() {
     }), dekstopUp && /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
       className: hero_module_default.a.heroImage,
       children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(image_default.a, {
-        src: theme === "light" ? '/hero.png' : '/hero2.png',
+        src: mode === "light" ? '/hero.png' : '/hero2.png',
+        alt: "Hero image",
         width: 600,
         height: 531
       })
@@ -381,6 +369,16 @@ function Hero() {
 }
 
 /* harmony default export */ var hero_Hero = (Hero);
+// EXTERNAL MODULE: external "next-themes"
+var external_next_themes_ = __webpack_require__("lN3F");
+
+// EXTERNAL MODULE: external "next-seo"
+var external_next_seo_ = __webpack_require__("efsx");
+
+// EXTERNAL MODULE: external "react-animate-on-scroll"
+var external_react_animate_on_scroll_ = __webpack_require__("J8oA");
+var external_react_animate_on_scroll_default = /*#__PURE__*/__webpack_require__.n(external_react_animate_on_scroll_);
+
 // CONCATENATED MODULE: ./pages/index.tsx
 
 
@@ -388,25 +386,61 @@ function Hero() {
 
 
 
+
+
+
 function Home({
-  posts
+  posts,
+  setting
 }) {
+  const {
+    theme,
+    setTheme
+  } = Object(external_next_themes_["useTheme"])();
+  const {
+    0: mode,
+    1: setMode
+  } = Object(external_react_["useState"])('');
+  Object(external_react_["useEffect"])(function () {
+    setMode(localStorage.getItem('theme'));
+  }, [theme]);
   return /*#__PURE__*/Object(jsx_runtime_["jsxs"])(jsx_runtime_["Fragment"], {
-    children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])(head_default.a, {
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("title", {
-        children: "Create Next App"
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("link", {
-        rel: "icon",
-        href: "/favicon.ico"
-      })]
-    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(hero_Hero, {}), /*#__PURE__*/Object(jsx_runtime_["jsx"])(Artikel_Artikel, {
-      posts: posts
+    children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(external_next_seo_["NextSeo"], {
+      title: setting.settings.meta_title,
+      description: setting.settings.meta_description,
+      canonical: setting.url,
+      openGraph: {
+        url: 'https://www.nextcode.id/',
+        title: `${setting.settings.og_title}`,
+        description: `${setting.settings.og_description}`,
+        images: [{
+          url: `${setting.settings.og_image}`,
+          width: 800,
+          height: 600,
+          alt: `${setting.settings.og_title}`
+        }],
+        site_name: `${setting.settings.og_title}`
+      },
+      twitter: {
+        handle: '@tegar',
+        site: '@nextcode',
+        cardType: 'summary_large_image'
+      }
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(hero_Hero, {
+      mode: mode
+    }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(external_react_animate_on_scroll_default.a, {
+      animateIn: "fadeIn",
+      children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(Artikel_Artikel, {
+        posts: posts
+      })
     })]
   });
 }
 async function getStaticProps(context) {
   const res = await fetch(`http://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&limit=4&include=tags`);
+  const res_setting = await fetch(`http://blog-backend.tegar.me/ghost/api/v3/content/settings/?key=adf6d2df02536197acba4f4ef2`);
   const posts = await res.json();
+  const setting = await res_setting.json();
 
   if (!posts) {
     return {
@@ -416,7 +450,8 @@ async function getStaticProps(context) {
 
   return {
     props: {
-      posts
+      posts,
+      setting
     } // will be passed to the page component as props
 
   };
@@ -759,6 +794,13 @@ module.exports = __webpack_require__("dQHF")
 /***/ (function(module, exports) {
 
 module.exports = require("react/jsx-runtime");
+
+/***/ }),
+
+/***/ "J8oA":
+/***/ (function(module, exports) {
+
+module.exports = require("react-animate-on-scroll");
 
 /***/ }),
 
@@ -1878,6 +1920,13 @@ function mitt() {
 
   };
 }
+
+/***/ }),
+
+/***/ "efsx":
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
 
 /***/ }),
 
@@ -3353,7 +3402,13 @@ module.exports = {
 	"dark": "hero_dark__Vmdmj",
 	"header": "hero_header__YMd-w",
 	"heroImage": "hero_heroImage__2LEPS",
-	"bounce": "hero_bounce__3fyc4"
+	"bounce": "hero_bounce__3fyc4",
+	"header__main": "hero_header__main__Zqvc4",
+	"moveInLeft": "hero_moveInLeft__1KPSf",
+	"header__secondary": "hero_header__secondary__2powq",
+	"moveInRight": "hero_moveInRight__2R-2n",
+	"header__button": "hero_header__button__2zSqF",
+	"fade": "hero_fade__2e3Qu"
 };
 
 
@@ -3474,13 +3529,6 @@ module.exports = {
 "use strict";
 exports.__esModule=true;exports.normalizePathSep=normalizePathSep;exports.denormalizePagePath=denormalizePagePath;function normalizePathSep(path){return path.replace(/\\/g,'/');}function denormalizePagePath(page){page=normalizePathSep(page);if(page.startsWith('/index/')){page=page.slice(6);}else if(page==='/index'){page='/';}return page;}
 //# sourceMappingURL=denormalize-page-path.js.map
-
-/***/ }),
-
-/***/ "xnum":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
 
 /***/ })
 

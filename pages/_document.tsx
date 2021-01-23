@@ -6,17 +6,22 @@ import Document, {
   DocumentContext,
 } from 'next/document'
 import Footer from '../component/footer/footer'
+import { NextSeo } from 'next-seo';
 
 class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+  constructor(props) {
+    super(props)
+
   }
 
   render() {
     return (
-      <Html>
+      <Html lang="id">
+        
+        
         <Head >
+        <link rel="icon" href="/logo.ico" />
+          
         <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;1,300&display=swap" rel="stylesheet"/>
           <link
@@ -25,6 +30,8 @@ class MyDocument extends Document {
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
             crossOrigin="anonymous"
           />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+
           <link href="/prism.css" rel="stylesheet" />
 
           <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" /> 
@@ -41,5 +48,6 @@ class MyDocument extends Document {
     )
   }
 }
+
 
 export default MyDocument

@@ -9,9 +9,9 @@ import Post from '../post/[slug]';
 
 
 function Category({posts,category}) {
-    console.log(category)
     const { theme, setTheme } = useTheme();
     return (
+  
         <section className={styles.categoryPage}>
             <div className={theme === 'light' ? styles.categoryPage__hero : styles.categoryPage__heroDark}  >
                 <div className="text-center ">

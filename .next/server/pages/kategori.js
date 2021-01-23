@@ -1169,6 +1169,13 @@ function mitt() {
 
 /***/ }),
 
+/***/ "efsx":
+/***/ (function(module, exports) {
+
+module.exports = require("next-seo");
+
+/***/ }),
+
 /***/ "elyg":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2623,6 +2630,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_themes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_themes__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("YFqc");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("efsx");
+/* harmony import */ var next_seo__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_seo__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
@@ -2637,45 +2648,68 @@ function Category({
     theme,
     setTheme
   } = Object(next_themes__WEBPACK_IMPORTED_MODULE_3__["useTheme"])();
-  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("section", {
-    className: _styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryPage,
-    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
-      className: theme === 'light' ? _styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryPage__hero : _styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryPage__heroDark,
-      children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
-        className: "text-center ",
+  return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["Fragment"], {
+    children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_seo__WEBPACK_IMPORTED_MODULE_5__["NextSeo"], {
+      title: 'Kumpulan  Materi Pembelajaran Nextcode indonesia',
+      description: 'Baca materi yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini',
+      canonical: 'https://www.nextcode.id/artikel',
+      openGraph: {
+        url: 'https://www.nextcode.id/artikel',
+        title: 'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia',
+        description: 'Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini',
+        images: [{
+          url: ``,
+          width: 800,
+          height: 600,
+          alt: `Kumpulan  Materi Pembelajaran Nextcode indonesia`
+        }],
+        site_name: 'Kumpulan  Materi Pembelajaran Nextcode indonesia'
+      },
+      twitter: {
+        handle: '@tegar',
+        site: '@nextcode',
+        cardType: 'summary_large_image'
+      }
+    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("section", {
+      className: _styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryPage,
+      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+        className: theme === 'light' ? _styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryPage__hero : _styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryPage__heroDark,
+        children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+          className: "text-center ",
+          children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h1", {
+            className: "text-4xl font-bold text-center text-white",
+            children: "KATEGORI"
+          }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h2", {
+            className: "mt-3 text-lg font-medium text-center text-white",
+            children: "Baca materi berdasarkan kategori yang kamu butuhkan"
+          })]
+        })
+      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+        className: "p-5 mt-10",
         children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h1", {
-          className: "text-4xl font-bold text-center text-white",
-          children: "KATEGORI"
-        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h2", {
-          className: "mt-3 text-lg font-medium text-center text-white",
-          children: "Baca materi berdasarkan kategori yang kamu butuhkan"
+          className: "text-4xl text-center",
+          children: "Kategori"
+        }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
+          className: "grid grid-cols-2 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ",
+          children: tagData.tags.map(tag => /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
+            href: `/kategori/${tag.name}`,
+            children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
+              className: `${_styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryBox} bg-white dark:bg-black-50 shadow-lg`,
+              children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("img", {
+                className: "text-center",
+                src: tag.feature_image,
+                alt: tag.name,
+                style: {
+                  height: '80px',
+                  width: "118px"
+                }
+              }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("span", {
+                className: "mt-4 ",
+                children: tag.name
+              })]
+            }, tag.id)
+          }))
         })]
-      })
-    }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
-      className: "p-5 mt-10",
-      children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("h1", {
-        className: "text-4xl text-center",
-        children: "Kategori"
-      }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
-        className: "grid grid-cols-2 gap-10 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ",
-        children: tagData.tags.map(tag => /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-          href: `/kategori/${tag.name}`,
-          children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("div", {
-            className: `${_styles_components_kategori_page_category_page_module_scss__WEBPACK_IMPORTED_MODULE_2___default.a.categoryBox} bg-white dark:bg-black-50 shadow-lg`,
-            children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("img", {
-              className: "text-center",
-              src: tag.feature_image,
-              alt: tag.name,
-              style: {
-                height: '80px',
-                width: "118px"
-              }
-            }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("span", {
-              className: "mt-4 ",
-              children: tag.name
-            })]
-          }, tag.id)
-        }))
       })]
     })]
   });

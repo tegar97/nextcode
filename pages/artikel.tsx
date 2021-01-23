@@ -7,6 +7,8 @@ import Search from '../component/search/search';
 import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import Slider from "react-slick";
+import Pagination from '../component/pagination/pagination';
+import { NextSeo } from 'next-seo';
 
 
 
@@ -27,6 +29,7 @@ function fetcher(url) {
   }
 function Artikel({tagData}) {
   const [search,setSearch] = useState('')
+  const [page,setPage] = useState(1)
 
   
    const onSearch = e => {
@@ -77,9 +80,35 @@ function Artikel({tagData}) {
     const [tag,setTag]  = useState('')
        
 
-    const { data, isError,isLoading} = usePost(`http://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&${search ? '' : 'limit=6'}&include=tags&${tag ? `filter=tag:${tag}` : ''}`)
+    const { data, isError,isLoading} = usePost(`http://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&${search ? '' : 'limit=8'}&include=tags&${tag ? `filter=tag:${tag}` : ''}&page=${page}`)
     return (
+      <>
+       <NextSeo 
+            title={'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia'}
+            description={'Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini'}
+            canonical={'https://www.nextcode.id/artikel'}
+            openGraph={{
+            url: 'https://www.nextcode.id/artikel',
+            title:'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia',
+            description: 'Baca artikel yang sudah kami buat disini , jika ingin melihat materi yang sudah terstruktur klik disini',
+            images: [
+                {
+                url: ``,
+                width: 800,
+                height: 600,
+                alt: `Kumpulan Artikel Materi Pembelajaran Nextcode indonesia`,
+                }
+            
+            ],
+            site_name: 'Kumpulan Artikel Materi Pembelajaran Nextcode indonesia'
+            }}
+            twitter={{
+            handle: '@tegar',
+            site: '@nextcode',
+            cardType: 'summary_large_image',
+        }}/>
         <section className={styles.artikelPage}>
+          
             <div className={theme === 'light' ? styles.artikelPage__hero : styles.artikelPage__heroDark}  >
                 <div className="text-center ">
                     <h1 className="text-4xl font-bold text-center text-white">ARTIKEL</h1>
@@ -92,7 +121,7 @@ function Artikel({tagData}) {
             
                 <div className="p-5 " >
                   <Slider  {...settings}>
-                  <div className={`${styles.categorySlider} border-solid border-black-50 border-2	 bg-white dark:bg-black-50`} style={{borderRadius: '10px',}}>
+                  <div className={`${styles.categorySlider} border-solid border-blue-500 border-2	 bg-white dark:bg-black-50`} style={{borderRadius: '10px',}}>
                           <button onClick={() => setTag('')} >Semua Kategori</button>
                     </div>
                     
@@ -100,7 +129,7 @@ function Artikel({tagData}) {
                     {
                       
                       tagData.tags.map(tag => (
-                        <div key={tag.id}  className={`${styles.categorySlider} border-solid border-black-50 border-2	 bg-white dark:bg-black-50`} style={{borderRadius: '10px',}}>
+                        <div key={tag.id}  className={`${styles.categorySlider} border-solid border-blue-500  border-2	 bg-white dark:bg-black-50`} style={{borderRadius: '10px',}}>
                           <button onClick={() => setTag(tag.slug)} >{tag  .name}</button>
                         </div>
                       ))
@@ -118,14 +147,24 @@ function Artikel({tagData}) {
                         }else if(post.title.toLowerCase().includes(search.toLowerCase())) {
                           return post
                         }
-                      }).map((post,key) => (
-                        <ArtikelCard post={post} key={post.id}/>
+                      }).map((post) => (
+                        <ArtikelCard post={post} key={post.id} />
                       ))
                   }   
+                  
        
                 </div>
+                {
+                  isLoading ? 'wait ...' : data.meta.pagination.pages < 1 ? '' :   
+                  <div className="mt-5 text-center">
+                    <Pagination page={page} setPage={setPage} totalPages={data.meta.pagination.pages}/>
+
+                  </div>
+                }
+               
             </div>
         </section>
+      </>
     )
 }
 

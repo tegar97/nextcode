@@ -3,6 +3,8 @@ import styles from './../../styles/components/post/post.module.scss'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import Prism from "prismjs";
+import ScrollAnimation from 'react-animate-on-scroll';
+import { NextSeo } from 'next-seo';
 
 function Post({post}) {
     const {theme,setTheme} = useTheme()
@@ -10,27 +12,50 @@ function Post({post}) {
         Prism.highlightAll();
       }, []);
     return (
-        <div className={styles.post}>
-            <div className={styles.postImage} >
-                <img src="/artikel.jpg" alt="image" style={{width: '100%',height: '100%',objectFit: 'cover'}} />
-            </div>
-            <div className={styles.postContent}>
-                <div className="text-center">
-                  <h1 className="text-4xl dark:color-grey-600 ">{post.posts[0].title}</h1>
-                  <div className="flex justify-center mt-4">
-                    <span>By Tania Rascia on November 30, 2020</span>
-                   
-
-                  </div>
+        <> 
+        <NextSeo 
+            title={post.posts[0].meta_title}
+            description={post.posts[0].meta_description}
+            canonical={post.posts[0].url}
+            openGraph={{
+            url: 'https://www.nextcode.id/',
+            title: `${post.posts[0].og_title}`,
+            description: `${post.posts[0].og_description}`,
+            images: [
+                {
+                url: `${post.posts[0].url}`,
+                width: 800,
+                height: 600,
+                alt: `${post.posts[0].og_title}`,
+                }
+            
+            ],
+            site_name: `nextcode indonesia`
+            }}
+            twitter={{
+            handle: '@tegar',
+            site: '@nextcode',
+            cardType: 'summary_large_image',
+            }}
+        />
+   
+            <div className={styles.post}>
+                <div className={styles.postImage} >
+                    <img src="/artikel.jpg" alt="image" style={{width: '100%',height: '100%',objectFit: 'cover'}} />
                 </div>
-                <div dangerouslySetInnerHTML={{__html:post.posts[0].html }} />;
-
-               <div className="mt-5">
-                   <span className="text-lg">TAG</span>
-                   <span className="block mt-5 text-md"><Link href="/tag">Reactjs</Link></span>
-               </div>
+                    <ScrollAnimation animateIn="fadeIn">
+                    <div className={styles.postContent}>
+                        <div className="text-center">
+                        <h1 className="text-4xl dark:color-grey-600 ">{post.posts[0].title}</h1>
+                        <div className="flex justify-center mt-4">
+                            <span>By Tegar Akmal on November 30, 2020</span>
+                        </div>
+                        </div>
+                        <div dangerouslySetInnerHTML={{__html:post.posts[0].html }} />;
+                    </div>
+                    </ScrollAnimation>
             </div>
-        </div>
+        </>
     )
 }
 
