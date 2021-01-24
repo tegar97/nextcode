@@ -82,7 +82,7 @@ export async function getStaticProps(context) {
     props: {
       tagData
     }, // will be passed to the page component as props
-    revalidate: 10
+    revalidate: 1
   }
 }
 

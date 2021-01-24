@@ -75,5 +75,7 @@ export async function getStaticProps(context) {
       posts,
       setting
     }, // will be passed to the page component as props
+    revalidate: 1
+
   }
 }
