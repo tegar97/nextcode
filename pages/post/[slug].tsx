@@ -72,7 +72,7 @@ export async function getStaticPaths(){
 }
 
 export async function getStaticProps({params}) {
-    const res = await fetch(`http://blog-backend.tegar.me/ghost/api/v3/content/posts/slug/${params.slug}/?key=8bc89b54fa72341924f8558631`)
+    const res = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/posts/slug/${params.slug}/?key=8bc89b54fa72341924f8558631`)
 
     const post = await res.json()
 
