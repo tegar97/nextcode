@@ -51,7 +51,7 @@ function Post({post}) {
                             <span>By Tegar Akmal on November 30, 2020</span>
                         </div>
                         </div>
-                        <div dangerouslySetInnerHTML={{__html:post.posts[0].html }} />;
+                        <div className="mt-5" dangerouslySetInnerHTML={{__html:post.posts[0].html }} />;
                     </div>
                     </ScrollAnimation>
             </div>
