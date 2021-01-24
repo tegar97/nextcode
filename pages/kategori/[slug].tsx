@@ -33,7 +33,7 @@ function Category({posts,category}) {
 }
 
 export async function getStaticPaths(){
-    const res = await fetch('https://blog-backend.tegar.me/ghost/api/v3/content/tags/?key=adf6d2df02536197acba4f4ef2')
+    const res = await fetch('https://blog-backend.tegar.me/ghost/api/v3/content/tags/?key=8bc89b54fa72341924f8558631')
     const tags = await res.json()
     // Get the paths we want to pre-render based on posts
     const paths = tags.tags.map((tag) => ({
@@ -43,8 +43,8 @@ export async function getStaticPaths(){
   return { paths, fallback: false }
 }
 export async function getStaticProps({params}) {
-  const res = await fetch( `https://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&limit=6&include=tags&${params.slug ? `filter=tag:${params.slug}` : ''}`)
-  const resCategory = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/tags/slug/${params.slug}?key=adf6d2df02536197acba4f4ef2`)
+  const res = await fetch( `https://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=8bc89b54fa72341924f8558631&limit=6&include=tags&${params.slug ? `filter=tag:${params.slug}` : ''}`)
+  const resCategory = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/tags/slug/${params.slug}?key=8bc89b54fa72341924f8558631`)
 
   const posts = await res.json()
   const category = await resCategory.json()

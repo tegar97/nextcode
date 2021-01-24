@@ -59,8 +59,8 @@ export default function Home({posts,setting}) {
   )
 }
 export async function getStaticProps(context) {
-  const res = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&limit=4&include=tags`)
-  const res_setting = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/settings/?key=adf6d2df02536197acba4f4ef2`)
+  const res = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=8bc89b54fa72341924f8558631&limit=4&include=tags`)
+  const res_setting = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/settings/?key=8bc89b54fa72341924f8558631`)
   const posts = await res.json()
   const setting = await res_setting.json()
 
