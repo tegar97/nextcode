@@ -69,7 +69,7 @@ function Category({tagData}) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`http://blog-backend.tegar.me/ghost/api/v3/content/tags/?key=adf6d2df02536197acba4f4ef2`)
+  const res = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/tags/?key=adf6d2df02536197acba4f4ef2`)
   const tagData = await res.json()
 
   if (!tagData) {

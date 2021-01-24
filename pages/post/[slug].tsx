@@ -60,7 +60,7 @@ function Post({post}) {
 }
 
 export async function getStaticPaths(){
-    const res = await fetch('http://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2')
+    const res = await fetch('https://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2')
     const posts = await res.json()
     // Get the paths we want to pre-render based on posts
     const paths = posts.posts.map((post) => ({

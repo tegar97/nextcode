@@ -4,7 +4,7 @@ const SectionCategory = () =>{
     return (
         <div className="mt-20">
             
-        </div>
+    </div>
     )
 }
 

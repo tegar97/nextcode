@@ -80,7 +80,7 @@ function Artikel({tagData}) {
     const [tag,setTag]  = useState('')
        
 
-    const { data, isError,isLoading} = usePost(`http://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&${search ? '' : 'limit=8'}&include=tags&${tag ? `filter=tag:${tag}` : ''}&page=${page}`)
+    const { data, isError,isLoading} = usePost(`https://blog-backend.tegar.me/ghost/api/v3/content/posts/?key=adf6d2df02536197acba4f4ef2&${search ? '' : 'limit=8'}&include=tags&${tag ? `filter=tag:${tag}` : ''}&page=${page}`)
     return (
       <>
        <NextSeo 
@@ -169,7 +169,7 @@ function Artikel({tagData}) {
 }
 
 export async function getStaticProps(context) {
-  const res = await fetch(`http://blog-backend.tegar.me/ghost/api/v3/content/tags/?key=adf6d2df02536197acba4f4ef2`)
+  const res = await fetch(`https://blog-backend.tegar.me/ghost/api/v3/content/tags/?key=adf6d2df02536197acba4f4ef2`)
   const tagData = await res.json()
 
   if (!tagData) {
