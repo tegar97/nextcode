@@ -22,15 +22,18 @@
 }
 
 .postText {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro' ,Helvetica,Arial,sans-serif;
     font-size: 1rem;
-    font-weight: 400;
     margin-top: 4rem;
-    letter-spacing: .3px;
-    line-height: 1.6;
+    letter-spacing: .4px;
+    line-height: 1.7;
     font-size: 1.25rem;
     margin-bottom: 30px;
-
+    color: '#ababab';
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-font-smoothing: antialiased !important;
+    text-rendering: optimizelegibility !important;
     
     
 }

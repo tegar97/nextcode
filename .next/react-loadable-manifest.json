@@ -1,26 +1,28 @@
 {
   "../component/navbar/navbar-mobile": [
     {
-      "id": "./component/navbar/NavbarModal.tsx",
-      "file": "static/chunks/0.js"
+      "id": "",
+      "file": "static/css/8b85b7b6df9c51e36bc5.css"
     },
     {
-      "id": "./component/navbar/navbar-mobile.tsx",
-      "file": "static/chunks/0.js"
+      "id": "XfHq",
+      "file": "static/css/8b85b7b6df9c51e36bc5.css"
     },
     {
-      "id": "./node_modules/css-loader/dist/cjs.js?!./node_modules/next/dist/compiled/postcss-loader/cjs.js?!./node_modules/resolve-url-loader/index.js?!./node_modules/sass-loader/dist/cjs.js?!./styles/components/navbar/navbar-modal.module.scss",
-      "file": "static/chunks/0.js"
+      "id": "dLCw",
+      "file": "static/css/8b85b7b6df9c51e36bc5.css"
     },
     {
-      "id": "./styles/components/navbar/navbar-modal.module.scss",
-      "file": "static/chunks/0.js"
-    }
-  ],
-  "./dev/noop": [
+      "id": "",
+      "file": "static/chunks/19.baa69afb2e479f9c82a7.js"
+    },
     {
-      "id": "./node_modules/next/dist/client/dev/noop.js",
-      "file": "static/chunks/1.js"
+      "id": "XfHq",
+      "file": "static/chunks/19.baa69afb2e479f9c82a7.js"
+    },
+    {
+      "id": "dLCw",
+      "file": "static/chunks/19.baa69afb2e479f9c82a7.js"
     }
   ]
 }
