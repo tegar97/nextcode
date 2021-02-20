@@ -162,7 +162,7 @@ function ArtikelCard({
       children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
         className: "flex flex-row",
         children: post.tags.map(tag => /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
-          href: `kategori/${tag.name}`,
+          href: `kategori/${tag.slug}`,
           children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("small", {
             className: `dark:text-white text-white ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.category}`,
             style: {
@@ -184,7 +184,7 @@ function ArtikelCard({
               children: moment_timezone__WEBPACK_IMPORTED_MODULE_3___default.a.tz(post.created_at, "Asia/Jakarta").fromNow()
             }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("li", {
               className: "ml-2 text-sm",
-              children: post.reading_time === 0 ? 'kurang dari 1 menit baca' : post.reading_time + ' menit baca'
+              children: post.reading_time === 0 ? "kurang dari 1 menit baca" : post.reading_time + " menit baca"
             })]
           })]
         })

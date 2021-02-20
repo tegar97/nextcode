@@ -49,7 +49,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("../" + ({}[chunkId]||chunkId) + "." + {"10":"5c45ea8a22579af90722"}[chunkId] + ".js");
+/******/ 			var chunk = require("../" + ({}[chunkId]||chunkId) + "." + {"10":"0f9647d5f33a72b446c5"}[chunkId] + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -1390,7 +1390,7 @@ function Navbar() {
   } = Object(external_react_["useState"])(false);
   const router = Object(router_["useRouter"])();
   Object(external_react_["useEffect"])(() => {
-    window.addEventListener('scroll', changeBackground);
+    window.addEventListener("scroll", changeBackground);
   }, []);
 
   const changeBackground = () => {
@@ -1401,18 +1401,18 @@ function Navbar() {
     }
   };
 
-  const homeRouter = router.pathname === '/';
+  const homeRouter = router.pathname === "/";
   return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("nav", {
-    className: `${navbar_module_default.a.navbar} ${active && homeRouter ? 'bg-white dark:bg-gray-900' : ''} ${!homeRouter ? 'bg-white dark:bg-gray-900' : ''} `,
+    className: `${navbar_module_default.a.navbar} ${active && homeRouter ? "bg-white dark:bg-gray-900" : ""} ${!homeRouter ? "bg-white dark:bg-gray-900" : ""} `,
     style: {
-      top: active && !homeRouter ? '-100px' : ''
+      top: active && !homeRouter ? "-100px" : ""
     },
     children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
       href: "/",
       children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
         className: "flex items-center p-2 cursor-pointer",
         children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(image_default.a, {
-          src: theme === "light" ? '/logo-black.png' : '/logo-white.png',
+          src: theme === "light" ? "/logo-black.png" : "/logo-white.png",
           alt: "logo",
           width: 100,
           height: 30
@@ -1420,10 +1420,10 @@ function Navbar() {
       })
     }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("ul", {
       style: {
-        marginRight: active ? '65%' : '',
-        transition: '.5s all'
+        marginRight: active ? "65%" : "",
+        transition: ".5s all"
       },
-      className: `flex flex-row   ${!active && homeRouter ? 'text-white dark:text-white' : 'text-black-50  dark:text-white  '}`,
+      className: `flex flex-row   ${!active && homeRouter ? "text-white dark:text-white" : "text-black-50  dark:text-white  "}`,
       children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
         href: "/artikel",
         children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
@@ -1436,18 +1436,6 @@ function Navbar() {
           className: "mr-3 text-sm cursor-pointer ",
           children: "Kategori"
         })
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
-        href: "#",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
-          className: "mr-3 text-sm cursor-pointer ",
-          children: "Tutorial Series"
-        })
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
-        href: "/#",
-        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("li", {
-          className: "mr-3 text-sm cursor-pointer ",
-          children: "Tentang"
-        })
       })]
     }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
       children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
@@ -1455,7 +1443,7 @@ function Navbar() {
         children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("i", {
           className: "mr-4 fas fa-search color-black-50 dark:color-white",
           style: {
-            color: theme === 'light' ? '#000' : '#fff'
+            color: theme === "light" ? "#000" : "#fff"
           }
         })
       })

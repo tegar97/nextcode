@@ -162,7 +162,7 @@ function ArtikelCard({
       children: [/*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("div", {
         className: "flex flex-row",
         children: post.tags.map(tag => /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
-          href: `kategori/${tag.name}`,
+          href: `kategori/${tag.slug}`,
           children: /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("small", {
             className: `dark:text-white text-white ${_styles_components_Artikel_card_ArtikelCard_module_scss__WEBPACK_IMPORTED_MODULE_4___default.a.category}`,
             style: {
@@ -184,7 +184,7 @@ function ArtikelCard({
               children: moment_timezone__WEBPACK_IMPORTED_MODULE_3___default.a.tz(post.created_at, "Asia/Jakarta").fromNow()
             }), /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsx"])("li", {
               className: "ml-2 text-sm",
-              children: post.reading_time === 0 ? 'kurang dari 1 menit baca' : post.reading_time + ' menit baca'
+              children: post.reading_time === 0 ? "kurang dari 1 menit baca" : post.reading_time + " menit baca"
             })]
           })]
         })
@@ -330,36 +330,40 @@ var external_react_responsive_ = __webpack_require__("NNXn");
 
 
 
+
 function Hero({
   mode
 }) {
   const dekstopUp = Object(external_react_responsive_["useMediaQuery"])({
-    query: '(min-width: 992px)'
+    query: "(min-width: 992px)"
   });
   const tabletLandscapeUp = Object(external_react_responsive_["useMediaQuery"])({
-    query: '(max-width:900px)'
+    query: "(max-width:900px)"
   });
   return /*#__PURE__*/Object(jsx_runtime_["jsxs"])("section", {
-    className: mode === 'light' ? hero_module_default.a.light : hero_module_default.a.dark,
+    className: mode === "light" ? hero_module_default.a.light : hero_module_default.a.dark,
     children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("div", {
       className: hero_module_default.a.header,
-      children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("h1", {
+      children: [/*#__PURE__*/Object(jsx_runtime_["jsxs"])("h1", {
         className: `${hero_module_default.a.header__main} text-4xl font-bold text-white sm:text-4xl lg:text-6xl md:text-4xl`,
-        children: "BELAJAR SEPUTAR IT "
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("h2", {
+        children: ["BELAJAR SEPUTAR IT", " "]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsxs"])("h2", {
         className: `${hero_module_default.a.header__secondary} w-11/12 mt-8 font-medium leading-7 tracking-wide text-white`,
-        children: "Nextcode indonesia  hadir sebagai wadah para developer muda indonesia yang ingin belajar coding seperti pemograman web,machine learning,pemogramana web GRATIS. "
-      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
-        className: `${hero_module_default.a.header__button}  mt-8 text-black-50 btn btn--white`,
-        style: {
-          color: '#141920'
-        },
-        children: "Get Started"
+        children: ["Nextcode indonesia hadir sebagai wadah para developer muda indonesia yang ingin belajar coding seperti pemograman web,machine learning,pemogramana web GRATIS.", " "]
+      }), /*#__PURE__*/Object(jsx_runtime_["jsx"])(link_default.a, {
+        href: "/artikel",
+        children: /*#__PURE__*/Object(jsx_runtime_["jsx"])("button", {
+          className: `${hero_module_default.a.header__button}  mt-8 text-black-50 btn btn--white`,
+          style: {
+            color: "#141920"
+          },
+          children: "Get Started"
+        })
       })]
     }), dekstopUp && /*#__PURE__*/Object(jsx_runtime_["jsx"])("div", {
       className: hero_module_default.a.heroImage,
       children: /*#__PURE__*/Object(jsx_runtime_["jsx"])(image_default.a, {
-        src: mode === "light" ? '/hero.png' : '/hero2.png',
+        src: mode === "light" ? "/hero.png" : "/hero2.png",
         alt: "Hero image",
         width: 600,
         height: 531
